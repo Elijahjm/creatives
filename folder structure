@@ -1,0 +1,17 @@
+This project is structured according to the Blessedhands Technologies metadata specification.
+
+/
+├── index.html
+├── about.html (Placeholder)
+├── services.html (Placeholder)
+├── portfolio.html (Placeholder)
+├── pricing.html (Placeholder)
+├── contact.html (Placeholder)
+├── reviews.html (Placeholder)
+└── assets/
+├── css/
+│   └── styles.css
+├── js/
+│   ├── main.js
+│   └── animations.js
+└── images/ (User defined - recommended location for assets like logo/hero-bg)

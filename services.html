@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the comprehensive technical services offered by Blessedhands Technologies: Web Design, IT Support, Graphics Design, and Computer Setup.">
+    <title>Services | Mpasto Creatives</title>
+    <link rel="icon" type="image/png" href="assets/images/icom.png">
+
+    <!-- Tailwind CSS CDN - Customized for Theme Colors -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bh-main': '#280f77', // Main: Dark Violet
+                        'bh-accent1': '#ff2f5d', // Accent 1: Bright Pink/Red
+                        'bh-accent2': '#ffff00', // Accent 2: Yellow
+                    },
+                    borderRadius: {
+                        '2xl': '1.5rem',
+                    },
+                    boxShadow: {
+                        'subtle': '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
+                        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                     <a href="index.html" class="text-3xl font-extrabold text-bh-main tracking-tight" aria-label="Blessedhands Technologies Home">
+                      
+                         <img src="assets/images/Blessedhands.png" alt="Blessedhands Technologies Logo" class="h-10"> 
+                    </a>
+                </div>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6 lg:space-x-10">
+                    <a href="index.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">About</a>
+                    <a href="services.html" class="text-gray-900 hover:text-bh-accent1 transition duration-150 font-medium">Services</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Portfolio</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Contact</a>
+                    <a href="reviews.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Reviews</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" aria-label="Open Menu" onclick="toggleMobileMenu()" class="text-bh-main text-2xl p-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-bars" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="mobile-menu-overlay transform -translate-x-full">
+            <div class="p-8 space-y-4 flex flex-col items-start">
+                <a href="index.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Home</a>
+                <a href="about.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">About</a>
+                <a href="services.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Services</a>
+                <a href="portfolio.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Portfolio</a>
+                <a href="pricing.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Pricing</a>
+                <a href="contact.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Contact</a>
+                <a href="reviews.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Reviews</a>
+                <a href="contact.html" class="mt-6 px-6 py-3 rounded-full text-lg font-bold btn-primary w-full text-center" onclick="toggleMobileMenu()">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-gradient text-white py-24 sm:py-32 lg:py-40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <p class="text-lg font-semibold text-bh-accent2 mb-4 gsap-reveal">Reliable solutions for every digital need</p>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-4">
+                    Our Comprehensive Range <br>of Services
+                </h1>
+                <p class="text-xl font-light max-w-3xl mx-auto mt-4 gsap-reveal">
+                    From initial concept and design to ongoing support and maintenance, we cover every aspect of your digital journey.
+                </p>
+            </div>
+        </section>
+
+        <!-- Services Detail Section -->
+        <section id="services-list" class="py-20 lg:py-32 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+
+                <!-- Service Block 1: Web Design & Development -->
+                <div id="web-design" class="flex flex-col lg:flex-row items-center gap-12 animate-section" data-delay="0.1">
+                    <div class="lg:w-1/2 w-full lg:order-2">
+                        <img src="Assets/images/website.jpg" alt="Illustration of responsive web design across multiple devices" class="rounded-2xl shadow-xl card-shadow">
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:order-1">
+                        <span class="text-sm font-bold text-bh-accent1 uppercase tracking-wider">Online Presence</span>
+                        <h2 class="text-4xl font-extrabold text-bh-main mt-2 mb-6">Web Design & Maintenance</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            We build fast, secure, and beautiful websites that perform. Our focus is on responsive design, SEO optimization, and a reliable user experience that converts visitors into customers.
+                        </p>
+                        <ul class="space-y-3 text-gray-700 list-inside mb-8">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Responsive Sites:</strong> Flawless display on all devices (mobile, tablet, desktop).</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>E-commerce Solutions:</strong> Fully secure shopping carts and payment integration.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>SEO Optimization:</strong> Built-in tools and structure for better search rankings.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Ongoing Maintenance:</strong> Security patches, content updates, and performance tuning.</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="pricing.html#web" class="px-6 py-3 rounded-full font-bold btn-primary">
+                                View Packages
+                            </a>
+                            <a href="contact.html?service=web" class="px-6 py-3 rounded-full font-bold bg-gray-200 text-bh-main hover:bg-bh-accent2 transition">
+                                <i class="fas fa-paper-plane mr-2"></i> Get a Custom Quote
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Block 2: IT Support -->
+                <div id="it-support" class="flex flex-col lg:flex-row items-center gap-12 animate-section" data-delay="0.2">
+                    <div class="lg:w-1/2 w-full lg:order-1">
+                        <img src="Assets/images/support.jpg" alt="Illustration of remote technical support with a headset" class="rounded-2xl shadow-xl card-shadow">
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:order-2">
+                        <span class="text-sm font-bold text-bh-accent1 uppercase tracking-wider">Operational Stability</span>
+                        <h2 class="text-4xl font-extrabold text-bh-main mt-2 mb-6">Reliable IT Support</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Keep your business running without interruption. Our dedicated team provides rapid, friendly, and expert technical assistance for all your hardware and software needs.
+                        </p>
+                        <ul class="space-y-3 text-gray-700 list-inside mb-8">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Hardware Upgrades:</strong> Recommendation and installation of new components.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Troubleshooting:</strong> Quick diagnosis and repair of system errors and crashes.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Remote Support:</strong> Secure, on-demand assistance wherever you are located.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Network Management:</strong> Optimization and security of local and wireless networks.</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="pricing.html#it" class="px-6 py-3 rounded-full font-bold btn-primary">
+                                Check Support Plans
+                            </a>
+                            <a href="contact.html?service=it" class="px-6 py-3 rounded-full font-bold bg-gray-200 text-bh-main hover:bg-bh-accent2 transition">
+                                <i class="fas fa-phone-alt mr-2"></i> Request Emergency Help
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Block 3: Graphics Design -->
+                <div id="graphics-design" class="flex flex-col lg:flex-row items-center gap-12 animate-section" data-delay="0.3">
+                    <div class="lg:w-1/2 w-full lg:order-2">
+                        <img src="Assets/images/design.jpg" alt="Illustration of graphic design tools and creative visuals" class="rounded-2xl shadow-xl card-shadow">
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:order-1">
+                        <span class="text-sm font-bold text-bh-accent1 uppercase tracking-wider">Visual Identity</span>
+                        <h2 class="text-4xl font-extrabold text-bh-main mt-2 mb-6">Professional Graphics Design</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Elevate your brand with striking, professional visual assets. Our designers craft impactful graphics that ensure your marketing materials are consistent and memorable.
+                        </p>
+                        <ul class="space-y-3 text-gray-700 list-inside mb-8">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Logo & Branding Kits:</strong> Complete visual identity packages.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Banners & Brochures:</strong> High-resolution graphics for print and digital use.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Social Media Kits:</strong> Templates and visuals optimized for all platforms.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Presentation Design:</strong> Professional slides and decks for corporate use.</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="pricing.html#graphics" class="px-6 py-3 rounded-full font-bold btn-primary">
+                                Design Packages
+                            </a>
+                            <a href="contact.html?service=graphics" class="px-6 py-3 rounded-full font-bold bg-gray-200 text-bh-main hover:bg-bh-accent2 transition">
+                                <i class="fas fa-pencil-ruler mr-2"></i> Discuss a Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Block 4: Computer Setup -->
+                <div id="computer-setup" class="flex flex-col lg:flex-row items-center gap-12 animate-section" data-delay="0.4">
+                    <div class="lg:w-1/2 w-full lg:order-1">
+                        <img src="Assets/images/setup.jpg" alt="Illustration of a new computer being set up with cables and software" class="rounded-2xl shadow-xl card-shadow">
+                    </div>
+                    <div class="lg:w-1/2 w-full lg:order-2">
+                        <span class="text-sm font-bold text-bh-accent1 uppercase tracking-wider">System Readiness</span>
+                        <h2 class="text-4xl font-extrabold text-bh-main mt-2 mb-6">New Computer Setup</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            We take the hassle out of setting up new equipment. We handle everything from OS installation to personalized software configuration, ensuring your new system is ready to work efficiently from the moment you turn it on.
+                        </p>
+                        <ul class="space-y-3 text-gray-700 list-inside mb-8">
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>OS & Software Install:</strong> Windows, macOS, and essential application setup.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Data Backup & Migration:</strong> Secure transfer of all your crucial files.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Security Configuration:</strong> Antivirus, firewall, and user account setup.</li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-bh-accent1 mt-1 mr-3"></i> <strong>Hardware Assembly:</strong> Monitor calibration, peripheral connection, and cable management.</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                            <a href="pricing.html#setup" class="px-6 py-3 rounded-full font-bold btn-primary">
+                                Setup Pricing
+                            </a>
+                            <a href="contact.html?service=setup" class="px-6 py-3 rounded-full font-bold bg-gray-200 text-bh-main hover:bg-bh-accent2 transition">
+                                <i class="fas fa-tools mr-2"></i> Book a Technician
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Accordion) -->
+        <section class="py-20 lg:py-32 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 gsap-reveal">
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                    <p class="text-xl text-gray-500 max-w-3xl mx-auto">Find quick answers to common questions about our services and process.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto space-y-4">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item bg-white rounded-2xl shadow-lg border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none text-xl font-semibold text-bh-main hover:bg-gray-50 transition" onclick="toggleAccordion(1)" aria-expanded="false" aria-controls="collapse-1">
+                            <span>How quickly can you start my web design project?</span>
+                            <i class="fas fa-chevron-down accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div id="collapse-1" class="accordion-content overflow-hidden" style="max-height: 0;">
+                            <div class="p-6 pt-0 text-gray-600 border-t border-gray-100">
+                                Once the scope is finalized and the deposit is received, we typically start the discovery phase within 3-5 business days. Small projects might begin even sooner. We prioritize efficient initiation to keep your project on track.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item bg-white rounded-2xl shadow-lg border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none text-xl font-semibold text-bh-main hover:bg-gray-50 transition" onclick="toggleAccordion(2)" aria-expanded="false" aria-controls="collapse-2">
+                            <span>Do you offer emergency IT support outside of business hours?</span>
+                            <i class="fas fa-chevron-down accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div id="collapse-2" class="accordion-content overflow-hidden" style="max-height: 0;">
+                            <div class="p-6 pt-0 text-gray-600 border-t border-gray-100">
+                                Yes. For clients on a premium support plan, we provide 24/7 on-call emergency IT services. For standard support, assistance is available during our core business hours (9 AM - 6 PM, Monday - Friday). You can find more details on our <a href="pricing.html#it" class="text-bh-accent1 font-semibold hover:underline">Pricing page</a>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item bg-white rounded-2xl shadow-lg border border-gray-100">
+                        <button class="accordion-header w-full flex justify-between items-center p-6 text-left focus:outline-none text-xl font-semibold text-bh-main hover:bg-gray-50 transition" onclick="toggleAccordion(3)" aria-expanded="false" aria-controls="collapse-3">
+                            <span>What file formats do you deliver for graphics design projects?</span>
+                            <i class="fas fa-chevron-down accordion-icon transition-transform duration-300"></i>
+                        </button>
+                        <div id="collapse-3" class="accordion-content overflow-hidden" style="max-height: 0;">
+                            <div class="p-6 pt-0 text-gray-600 border-t border-gray-100">
+                                We deliver all finalized graphics in versatile, industry-standard formats, including vector files (AI, EPS, SVG) for logos and high-resolution raster files (PNG, JPG) for web and print. You will receive full ownership of the final files.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Reused) -->
+    <footer class="bg-bh-main text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 border-b border-white border-opacity-20 pb-10 mb-10">
+                <div class="col-span-2 md:col-span-2">
+                    <h4 class="text-3xl font-extrabold text-white mb-4">Blessedhands<span class="text-bh-accent1">.</span></h4>
+                    <p class="text-gray-300 mb-6">A reliable place in a digital world. We empower your business with cutting-edge technology and support.</p>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-xl font-semibold mb-4 text-bh-accent2">Quick Links</h5>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-1">
+                    <h5 class="text-xl font-semibold mb-4 text-bh-accent2">Contact</h5>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-bh-accent1"></i> 123 Tech Way, Digital City, 90210</li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-3 text-bh-accent1"></i> (555) 123-4567</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-bh-accent1"></i> support@blessedhands.tech</li>
+                    </ul>
+                </div>
+                <div class="col-span-2 md:col-span-1">
+                    <h5 class="text-xl font-semibold mb-4 text-bh-accent2">Newsletter</h5>
+                    <p class="text-gray-300 mb-4">Stay up-to-date with our latest tech insights.</p>
+                    <form action="#" method="POST" class="space-y-3" onsubmit="event.preventDefault(); handleNewsletter();">
+                        <input type="email" placeholder="Your Email" aria-label="Email for newsletter" required class="w-full p-3 rounded-xl bg-bh-main border border-gray-600 text-white placeholder-gray-400 focus:ring-bh-accent1 focus:border-bh-accent1 transition">
+                        <button type="submit" class="w-full px-5 py-3 rounded-xl font-bold bg-bh-accent1 text-bh-main hover:bg-bh-accent2 transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p id="newsletter-message" class="mt-2 text-sm text-green-400" style="display:none;"></p>
+                </div>
+            </div>
+            <div class="text-center pt-8 text-gray-400 text-sm">
+                &copy; <span id="current-year"></span> Blessedhands Technologies. All rights reserved. | <a href="#" class="hover:text-bh-accent1">Privacy Policy</a> | <a href="#" class="hover:text-bh-accent1">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <!-- Custom JS Files -->
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

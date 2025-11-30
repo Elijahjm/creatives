@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mpatso Creatives: Gifted hands for digital success. Offering Web Design, IT Support, Computer Setup, and Graphics Design services.">
+    <title>Mpatso Creatives | Gifted hands for digital success</title>
+    <link rel="icon" type="image/png" href="assets/images/icom.png">
+
+    <!-- Tailwind CSS CDN - Customized for Theme Colors -->
+    <!-- The config must be defined early for the custom theme colors to work with external CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bh-main': '#280f77', // Main: Dark Violet
+                        'bh-accent1': '#ff2f5d', // Accent 1: Bright Pink/Red
+                        'bh-accent2': '#ffff00', // Accent 2: Yellow
+                    },
+                    borderRadius: {
+                        '2xl': '1.5rem', // For 2xl rounded cards
+                    },
+                    boxShadow: {
+                        'subtle': '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
+                        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Font (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- SEO Structured Data (JSON-LD) for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Blessedhands Technologies",
+      "url": "https://www.mpatsocreatives.com",
+      "logo":  <img src="assets/images/Blessedhands.png" alt="Blessedhands Technologies Logo"> "https://placehold.co/60x60/280f77/ffffff?text=BH",
+      "description": "Gifted hands for digital success. Provider of IT solutions, web design, and technical support.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+26074115510",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <!-- LOGO PLACEHOLDER: Replace this text with your logo image or uncomment the img tag -->
+                    <a href="index.html" class="text-3xl font-extrabold text-bh-main tracking-tight" aria-label="Blessedhands Technologies Home">
+                      
+                         <img src="assets/images/Blessedhands.png" alt="Blessedhands Technologies Logo" class="h-10"> 
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 lg:space-x-10">
+                    <a href="index.html" class="text-gray-900 hover:text-bh-accent1 transition duration-150 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">About</a>
+                    <a href="services.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Services</a>
+                    <a href="portfolio.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Portfolio</a>
+                    <a href="pricing.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Pricing</a>
+                    <a href="contact.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Contact</a>
+                    <a href="reviews.html" class="text-gray-600 hover:text-bh-accent1 transition duration-150">Reviews</a>
+                </div>
+               
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" aria-label="Open Menu" onclick="toggleMobileMenu()" class="text-bh-main text-2xl p-2 rounded-lg hover:bg-gray-100 transition">
+                        <i class="fas fa-bars" id="menu-icon"></i>
+                    </button>
+                </div>
+                
+
+            </div>
+        </nav>
+
+                <!-- Mobile Menu Overlay (Hidden by default, styled in CSS) -->
+        <div id="mobile-menu" class="mobile-menu-overlay transform -translate-x-full">
+            <div class="p-8 space-y-4 flex flex-col items-start">
+                <a href="index.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Home</a>
+                <a href="about.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">About</a>
+                <a href="services.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Services</a>
+                <a href="portfolio.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Portfolio</a>
+                <a href="pricing.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Pricing</a>
+                <a href="contact.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Contact</a>
+                <a href="reviews.html" class="text-2xl font-semibold text-bh-main hover:text-bh-accent1 transition" onclick="toggleMobileMenu()">Reviews</a>
+                <a href="contact.html" class="mt-6 px-6 py-3 rounded-full text-lg font-bold btn-primary w-full text-center" onclick="toggleMobileMenu()">Get a Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-gradient text-white py-24 sm:py-32 lg:py-40">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- Slogan reveal (GSAP) -->
+                <p class="text-xl sm:text-2xl mb-4 font-semibold text-bh-accent2 opacity-0 gsap-reveal">
+                    A reliable place in a digital world
+                </p>
+
+                <!-- Business Name & Animated Headline (GSAP) -->
+                <h1 id="hero-headline" class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-8 leading-tight">
+                    <span class="gsap-line">
+                        <span class="gsap-line-inner">MPATSO CREATIVES:</span>
+                    </span>
+                    <span class="gsap-line">
+                        <span class="gsap-line-inner">Gifted hands for digital success!</span>
+                    </span>
+                </h1>
+
+                <!-- Typewriter/Phrase Banner -->
+                <div class="min-h-[2rem] mb-12">
+                    <div class="inline-block px-4 py-2 rounded-full bg-white bg-opacity-20 text-lg font-medium shadow-lg">
+                        <span class="mr-2 text-bh-accent2">Focusing on:</span> <span id="phrase-banner" class="font-bold">Web Design</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="contact.html" class="px-8 py-4 rounded-full text-lg font-bold btn-primary hover:scale-105 transition duration-300">
+                        <i class="fas fa-magic mr-2"></i> Get a Quote
+                    </a>
+                    <a href="#services" class="px-8 py-4 rounded-full text-lg font-bold btn-secondary hover:scale-105 transition duration-300">
+                        <i class="fas fa-laptop-code mr-2"></i> Our Services
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview Section -->
+        <section id="services" class="py-20 lg:py-32 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 gsap-reveal">
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Core Services</h2>
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto">Providing reliable technical solutions from concept to deployment and maintenance.</p>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1: Graphics Design -->
+                    <div class="card-shadow bg-white p-8 rounded-2xl animate-section" data-delay="0.1">
+                        <div class="text-bh-accent1 text-5xl mb-6">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Graphics Design</h3>
+                        <p class="text-gray-600">Creating stunning visual assets, logos, and branding materials that capture your audience's attention and communicate your message effectively.</p>
+                        <a href="services.html#graphics" class="mt-4 inline-block text-bh-accent1 font-semibold hover:text-bh-main transition">
+                            Learn More <i class="fas fa-arrow-right text-sm ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 2: Computer Setup -->
+                    <div class="card-shadow bg-white p-8 rounded-2xl animate-section" data-delay="0.2">
+                        <div class="text-bh-accent1 text-5xl mb-6">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Computer Setup</h3>
+                        <p class="text-gray-600">Professional hardware and software installation, configuration, and optimization to ensure your systems run smoothly and efficiently from day one.</p>
+                        <a href="services.html#setup" class="mt-4 inline-block text-bh-accent1 font-semibold hover:text-bh-main transition">
+                            Learn More <i class="fas fa-arrow-right text-sm ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 3: Web Design -->
+                    <div class="card-shadow bg-white p-8 rounded-2xl animate-section" data-delay="0.3">
+                        <div class="text-bh-accent1 text-5xl mb-6">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Web Design</h3>
+                        <p class="text-gray-600">Building responsive, modern, and SEO-friendly websites using the latest technologies for a compelling and reliable online presence.</p>
+                        <a href="services.html#web" class="mt-4 inline-block text-bh-accent1 font-semibold hover:text-bh-main transition">
+                            Learn More <i class="fas fa-arrow-right text-sm ml-1"></i>
+                        </a>
+                    </div>
+
+                    <!-- Card 4: IT Support -->
+                    <div class="card-shadow bg-white p-8 rounded-2xl animate-section" data-delay="0.4">
+                        <div class="text-bh-accent1 text-5xl mb-6">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">IT Support</h3>
+                        <p class="text-gray-600">Fast, reliable, and friendly technical support and maintenance to solve your toughest digital challenges and keep your business running.</p>
+                        <a href="services.html#it" class="mt-4 inline-block text-bh-accent1 font-semibold hover:text-bh-main transition">
+                            Learn More <i class="fas fa-arrow-right text-sm ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Snippet -->
+        <section class="py-20 lg:py-32 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <!-- Lottie/SVG Placeholder -->
+                    <div class="lg:w-1/2 w-full flex justify-center animate-section" data-delay="0.5">
+                        <div id="lottie-about-placeholder" class="w-full max-w-md h-64">
+                            <!-- Placeholder image for Lottie/Photo -->
+                            <img src="https://placehold.co/400x400/280f77/ffffff?text=Trusted+Tech" alt="Illustration of a computer and data" class="w-full h-full object-cover rounded-2xl shadow-xl">
+                        </div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="lg:w-1/2 w-full gsap-reveal">
+                        <h2 class="text-4xl font-extrabold text-gray-900 mb-6">About Mpatso Creatives</h2>
+                        <p class="text-xl text-gray-600 mb-4">
+                            Founded on the principle of reliability & and God blessings of creativeness, Mpatso Creatives aims to bridge the gap between people and the ever-evolving digital world.
+                        We believe that every business, regardless of size, deserves accessible, high-quality, and trustworthy technology solutions and visibility .
+                        </p>
+                        <p class="text-xl text-gray-600 mb-8">
+                            Our team is dedicated to providing meticulous service, from complex web development, graphics designing to simple computer setups, ensuring you always have a reliable place to turn.
+                        </p>
+                        <a href="about.html" class="px-8 py-3 rounded-full font-bold bg-bh-main text-white hover:bg-bh-accent1 transition duration-300 shadow-lg">
+                            Read Our Full Story
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Preview Section -->
+        <section class="py-20 lg:py-32 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 gsap-reveal">
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Recent Work</h2>
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto">A glimpse into our diverse projects, showcasing our commitment to clean design and functional technology.</p>
+                </div>
+
+                <!-- Portfolio Carousel/Slider -->
+                <div id="portfolio-carousel" class="relative animate-section" data-delay="0.2">
+                    <div class="overflow-hidden rounded-2xl shadow-xl">
+                        <!-- Example Project Cards (Swiper-like structure) -->
+                        <div class="flex transition-transform duration-500 ease-in-out" id="portfolio-slider">
+                            <!-- Item 1 -->
+                            <div class="w-full flex-shrink-0 p-4">
+                                <a href="portfolio.html#p1">
+                                    <img src="Assets/images/commerce.png" alt="E-commerce Platform Project" class="rounded-xl object-cover mb-4 card-shadow w-full">
+                                </a>
+                                <h3 class="text-2xl font-bold text-gray-900">E-commerce Website Platform design</h3>
+                                <p class="text-gray-600">Web Design & Development | Increased sales.</p>
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="w-full flex-shrink-0 p-4">
+                                <a href="portfolio.html#p2">
+                                    <img src="Assets/images/branding.png" alt="Corporate Branding Project" class="rounded-xl object-cover mb-4 card-shadow w-full">
+                                </a>
+                                <h3 class="text-2xl font-bold text-gray-900">New Corporate Identity Package</h3>
+                                <p class="text-gray-600">Graphics Design | Complete logo and brand guideline creation.</p>
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="w-full flex-shrink-0 p-4">
+                                <a href="portfolio.html#p3">
+                                    <img src="Assets/images/installations.jpg" alt="IT Migration Solution Project" class="rounded-xl object-cover mb-4 card-shadow w-full">
+                                </a>
+                                <h3 class="text-2xl font-bold text-gray-900">Windows Installations & Setup</h3>
+                                <p class="text-gray-600">Seamless transition to modern usability and security.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <button aria-label="Previous Slide" id="prev-btn" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-bh-main text-white p-3 rounded-full shadow-lg ml-4 opacity-70 hover:opacity-100 transition z-10">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button aria-label="Next Slide" id="next-btn" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-bh-main text-white p-3 rounded-full shadow-lg mr-4 opacity-70 hover:opacity-100 transition z-10">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Preview Section -->
+        <section class="py-20 lg:py-32 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 gsap-reveal">
+                    <h2 class="text-4xl font-extrabold text-gray-900 mb-4">What Our Clients Say</h2>
+                    <p class="text-xl text-gray-500 max-w-2xl mx-auto">Reliability is our hallmark. See what real users think of our work.</p>
+                </div>
+
+                <!-- Star Rating Average -->
+                <div class="text-center mb-10 gsap-reveal">
+                    <div class="text-6xl text-bh-accent2 mb-2" id="average-stars">
+                        <!-- Filled by JS -->
+                    </div>
+                    <p class="text-2xl font-bold text-gray-900">
+                        <span id="average-rating">4.8</span> out of 5 stars
+                    </p>
+                    <p class="text-gray-500" id="total-reviews">Based on 12 reviews</p>
+                </div>
+
+                <!-- Sample Reviews Grid -->
+                <div class="reviews-container mb-12 animate-section" data-delay="0.3" id="sample-reviews-container">
+                    <!-- Reviews are loaded here by JS -->
+                </div>
+
+                <!-- CTA to Reviews Page -->
+                <div class="text-center">
+                    <a href="reviews.html" class="px-8 py-3 rounded-full font-bold btn-primary hover:scale-105 transition duration-300">
+                        Read All Reviews
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Global) -->
+    <footer class="bg-bh-main text-white py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-10 border-b border-white border-opacity-20 pb-10 mb-10">
+
+                <!-- Business Info -->
+                <div class="col-span-2 md:col-span-2">
+                    <h4 class="text-3xl font-extrabold text-white mb-4">Mpatso CREATIVES<span class="text-bh-accent1">.</span></h4>
+                    <p class="text-gray-300 mb-6">Gifted hands for digital success. We empower your business with cutting-edge technology and support.</p>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" aria-label="Facebook" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-bh-accent1 transition"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h5 class="text-xl font-semibold mb-4 text-bh-accent2">Quick Links</h5>
+                    <ul class="space-y-3">
+                        <li><a href="about.html" class="text-gray-300 hover:text-white transition">About Us</a></li>
+                        <li><a href="services.html" class="text-gray-300 hover:text-white transition">Services</a></li>
+                        <li><a href="portfolio.html" class="text-gray-300 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="pricing.html" class="text-gray-300 hover:text-white transition">Pricing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-span-1">
+                    <h5 class="text-xl font-semibold mb-4 text-bh-accent2">Contact</h5>
+                    <ul class="space-y-3">
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3 text-bh-accent1"></i> Kabwe, Zambia</li>
+                        <li class="flex items-center"><i class="fas fa-phone mr-3 text-bh-accent1"></i> (+260) 974115510</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3 text-bh-accent1"></i> support@zanjacreatives.com</li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Form -->
+                <div class="col-span-2 md:col-span-1">
+                    <h5 class="text-xl font-semibold mb-4 text-bh-accent2">Newsletter</h5>
+                    <p class="text-gray-300 mb-4">Stay up-to-date with our latest tech insights.</p>
+                    <form action="#" method="POST" class="space-y-3" onsubmit="event.preventDefault(); handleNewsletter();">
+                        <input type="email" placeholder="Your Email" aria-label="Email for newsletter" required class="w-full p-3 rounded-xl bg-bh-main border border-gray-600 text-white placeholder-gray-400 focus:ring-bh-accent1 focus:border-bh-accent1 transition">
+                        <button type="submit" class="w-full px-5 py-3 rounded-xl font-bold bg-bh-accent1 text-bh-main hover:bg-bh-accent2 transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p id="newsletter-message" class="mt-2 text-sm text-green-400" style="display:none;"></p>
+                </div>
+            </div>
+            <div class="text-center pt-8 text-gray-400 text-sm">
+                &copy; <span id="current-year"></span> Zanja Creatives. All rights reserved. | <a href="#" class="hover:text-bh-accent1">Privacy Policy</a> | <a href="#" class="hover:text-bh-accent1">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP for Animations (must load first) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    
+    <!-- Custom JS Files -->
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+/* * Custom Styles for Blessedhands Technologies
+ * All styles rely on Tailwind CSS for utility classes.
+ */
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8;
+    scroll-behavior: smooth;
+}
+
+/* Hero Gradient specified: #280f77 → #ff2f5d */
+.hero-gradient {
+    /* Uses custom Tailwind theme colors: bh-main and bh-accent1 */
+    background: linear-gradient(135deg, var(--tw-bh-main) 0%, var(--tw-bh-accent1) 100%);
+    
+    
+    background-image: url('../images/cover.png');
+    background-size: cover;
+    background-position: center;
+  
+}
+
+/* Subtle shadows for cards (using a custom class for consistency) */
+.card-shadow {
+    box-shadow: 0 4px 12px rgba(40, 15, 119, 0.1); /* Based on bh-main color */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(40, 15, 119, 0.15);
+}
+
+/* High Contrast Buttons - Defined using @apply for reusability across pages */
+.btn-primary {
+    @apply bg-bh-accent1 text-white hover:bg-bh-main transition duration-300 shadow-xl border-2 border-bh-accent1;
+}
+.btn-secondary {
+    /* Note: text-bh-main is required for contrast on the light background */
+    @apply bg-transparent text-bh-main hover:bg-bh-main hover:text-white transition duration-300 shadow-lg border-2 border-bh-main;
+}
+
+/* --- MOBILE MENU OVERLAY STYLING --- */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 5rem; /* Match the header height (h-20) */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 5rem); /* Full height minus header height */
+    background-color: #fff;
+    z-index: 30; /* Below the header, above everything else */
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- GSAP Animation Helper Classes --- */
+
+/* Reduce motion preference handling: Overrides all GSAP opacity/transform settings */
+@media (prefers-reduced-motion: reduce) {
+    .gsap-reveal, .gsap-line, .animate-section {
+        /* Immediately visible and static */
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    .card-shadow:hover {
+        transform: none; /* Disable hover lift */
+    }
+}
+
+/* For the animated text line-by-line reveal */
+.gsap-line {
+    display: block;
+    overflow: hidden;
+}
+
+.gsap-line-inner {
+    display: block;
+}
+
+/* Reviews Grid Structure */
+.reviews-container {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 768px) {
+    .reviews-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* --- Timeline Section Styles (For horizontal scrolling animation) --- */
+
+/* Wrapper handles vertical space needed for the horizontal scroll to happen */
+.timeline-wrapper {
+    /* Create vertical space needed to scroll the horizontal section */
+    height: 300vh; 
+    /* The 300vh ensures the user scrolls 3x the viewport height before the animation completes. */
+}
+
+/* Container that holds the steps and gets horizontally translated */
+.timeline-container {
+    /* This container is what GSAP pins and scrolls horizontally */
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-wrap: nowrap; /* Forces content onto a single line */
+    align-items: center;
+    height: 100vh; /* Takes up the full viewport height when pinned */
+    padding: 0 5vw; /* Padding on the ends */
+}
+
+/* Each step card */
+.timeline-step {
+    flex-shrink: 0; /* Important: Prevents items from shrinking */
+    width: 70vw; /* Takes up 70% of the viewport width */
+    max-width: 400px;
+    margin-right: 5vw; /* Space between cards */
+    padding: 2.5rem;
+    background-color: #fefefe;
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    text-align: left;
+}
+
+/* Styling for the icon and number */
+.step-icon {
+    @apply text-bh-main relative w-16 h-16 flex items-center justify-center rounded-full mb-6 text-3xl font-bold border-4 border-bh-accent1;
+    box-shadow: 0 4px 10px rgba(40, 15, 119, 0.2);
+}
+
+.step-number {
+    @apply absolute -top-2 -right-2 w-7 h-7 flex items-center justify-center text-xs text-white bg-bh-accent1 rounded-full border-2 border-white;
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 768px) {
+    .timeline-wrapper {
+        height: 400vh; /* Give more scroll space on mobile */
+    }
+    .timeline-step {
+        width: 85vw; /* Make cards a bit wider on small screens */
+        padding: 1.5rem;
+    }
+    .step-icon {
+        width: 14vw; /* Responsive size */
+        height: 14vw;
+        max-width: 60px;
+        max-height: 60px;
+        font-size: 1.5rem;
+    }
+}
